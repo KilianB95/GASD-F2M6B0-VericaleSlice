@@ -1,0 +1,1 @@
+# GASD-F2M6B0-VericaleSlice
