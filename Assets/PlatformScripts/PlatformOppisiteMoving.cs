@@ -22,13 +22,13 @@ public class PlatformOppisiteMoving : MonoBehaviour
     {
         if (origY - transform.position.y < -distance)
         {
-            Debug.Log("loopt niet vast");
+            Debug.Log("werkt");
             useSpeed = -directionSpeed;
         }
         
         else if (origY - transform.position.y > distance)
         {
-            Debug.Log("loopt vast");
+            Debug.Log("werkt");
             useSpeed = directionSpeed;
         }
         transform.Translate(0, useSpeed * Time.deltaTime, 0);
