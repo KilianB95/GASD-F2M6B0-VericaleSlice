@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - MovingPlatform
+  - OppisiteMovingPlatform
   - PostProcessing
   - Not in Reflection
   - 
