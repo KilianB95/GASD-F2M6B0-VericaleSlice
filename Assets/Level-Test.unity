@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163e02ddae6b2014a8c1a44bc2274525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionSpeed: 2
+  directionSpeed: 1.2
   distance: 2.5
 --- !u!1 &427839657
 GameObject:
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1458068e8823f4c9e3601201cffb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionSpeed: 2
+  directionSpeed: 1.2
   distance: 2.5
 --- !u!1 &831344729
 GameObject:
@@ -932,5 +932,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1458068e8823f4c9e3601201cffb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionSpeed: 2
+  directionSpeed: 1.2
   distance: 2.5
