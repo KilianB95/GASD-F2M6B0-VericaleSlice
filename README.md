@@ -7,7 +7,7 @@ Kilian, Rick, Julia, Luca, Taquila
 -==========================
 ### Opdracht:
 Verticale Slice een 10 á 15 sec van een gameplay van een game. 
-Onze game die we gaan na gaan maken wordt Ori The Blind Forest.
+Onze game die we na gaan maken wordt Ori The Blind Forest.
 
 
 -==========================
