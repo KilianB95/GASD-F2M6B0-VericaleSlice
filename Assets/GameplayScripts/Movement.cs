@@ -56,21 +56,24 @@ public class Movement : MonoBehaviour
             }
           
         }
+        Vector3 characterFlip = transform.localScale;
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+            characterFlip.x = -10;
            // vertical = Input.GetAxis("Vertical");
            // horizontal = Input.GetAxis("Horizontal");
-           // rb.velocity = (transform.forward * vertical) * speed * Time.deltaTime;
+           //rb.velocity = (transform.forward * vertical) * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            characterFlip.x = 10;
 
         }
         Debug.Log(isGrounded);
         Debug.Log("Do Something");
-
+        Debug.Log(characterFlip);
     }
    
 
