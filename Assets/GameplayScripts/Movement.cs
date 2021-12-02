@@ -60,7 +60,8 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
-            characterFlip.x = -10;
+            characterFlip.z = 1;
+            transform.localScale = characterFlip;
            // vertical = Input.GetAxis("Vertical");
            // horizontal = Input.GetAxis("Horizontal");
            //rb.velocity = (transform.forward * vertical) * speed * Time.deltaTime;
@@ -68,11 +69,12 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
-            characterFlip.x = 10;
+            characterFlip.z = -1;
+            transform.localScale = characterFlip;
 
         }
-        Debug.Log(isGrounded);
-        Debug.Log("Do Something");
+        //Debug.Log(isGrounded);
+        //Debug.Log("Do Something");
         Debug.Log(characterFlip);
     }
    
