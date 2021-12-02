@@ -12,8 +12,7 @@ public class EnemyShooting : MonoBehaviour
 
     private float shootingTime;
 
-    public int health = 100;
-    public GameObject deathEffect;
+    
 
 
 
