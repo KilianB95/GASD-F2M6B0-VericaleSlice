@@ -424,8 +424,6 @@ MonoBehaviour:
   bullet: {fileID: 4245283294224751203, guid: b0daa698702053b4284949e8e6481f81, type: 3}
   fireRate: 8000
   shootingPower: 0.3
-  health: 100
-  deathEffect: {fileID: 0}
 --- !u!1 &1228595799
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +437,7 @@ GameObject:
   - component: {fileID: 1228595802}
   - component: {fileID: 1228595800}
   - component: {fileID: 1228595801}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: test/player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
