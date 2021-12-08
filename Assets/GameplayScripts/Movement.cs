@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public Vector3 jump;
     public float jumpForce = 3.0f;
     public int _doubleJump;
+    public int countJump = 2;
    // private float vertical;
     //private float horizontal;
 
@@ -41,6 +42,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
+           
             if (isGrounded)
             {
 
