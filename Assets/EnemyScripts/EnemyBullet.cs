@@ -14,7 +14,7 @@ public class EnemyBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
-            //TakeDamage(3);
+            
             Debug.Log("take damage");
         }
     }
