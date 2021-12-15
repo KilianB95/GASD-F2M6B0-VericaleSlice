@@ -51,26 +51,31 @@ public class OriBash : MonoBehaviour
 
                         canBash = true;
                         
-                        break;
                     }
+                   
                 }
+
+               
             }
+
+            
         }
         else if (Input.GetKeyUp(KeyCode.C) && canBash)
         {
-            Time.timeScale = 1;
+
             direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - BashableObj.transform.position);
             direction.z = 0;
             direction = direction.normalized;
 
             transform.position = rb.transform.position + direction;
+            Time.timeScale = 1;
 
-            
             GetComponent<Rigidbody>();
             rb.AddForce(0, 3, 0);
 
             canBash = false;
         }
+
 
         void onDrawGizmos()
         {

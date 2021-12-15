@@ -401,7 +401,7 @@ MonoBehaviour:
   speed: 7
   canBash: 1
   BashableObj: {fileID: 4245283294224751203, guid: b0daa698702053b4284949e8e6481f81, type: 3}
-  maxTime: 0
+  maxTime: 1
 --- !u!1 &2129334454
 GameObject:
   m_ObjectHideFlags: 0
