@@ -7,17 +7,18 @@ public class OriBash : MonoBehaviour
     public float reachRadius = 1.35f;
     RaycastHit2D[] objectsNear;
     Vector3 direction;
-    public float speed = 20;
+    public float speed = 3;
     public bool canBash;
-    GameObject BashableObj;
+    public GameObject BashableObj;
     public float maxTime = 1f;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    IEnumerator counter()
+   IEnumerator Counter()
     {
         //yield return new WaitForSeconds()
         float pauseTime = Time.realtimeSinceStartup + maxTime;
@@ -38,14 +39,14 @@ public class OriBash : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            objectsNear = Physics2D.CircleCastAll(transform.position, reachRadius, Vector3.forward);
+            objectsNear = Physics2D.CircleCastAll(transform.position, reachRadius, Vector3.up);
             {
                 foreach(RaycastHit2D obj in objectsNear)
                 {
-                    if(obj.collider.gameObject.GetComponent<BashAble>() != null)
+                    if (obj.collider.gameObject.GetComponent<BashAble>() != null)
                     {
-                        BashableObj = obj.collider.gameObject;
-                        StartCoroutine("counter");
+                        BashableObj = gameObject;
+                        StartCoroutine("Counter");
                         Time.timeScale = 0;
 
                         canBash = true;
@@ -62,10 +63,11 @@ public class OriBash : MonoBehaviour
             direction.z = 0;
             direction = direction.normalized;
 
-            transform.position = BashableObj.transform.position + direction;
+            transform.position = rb.transform.position + direction;
 
-            GetComponent<Movement>().outsideforce = true;
-            GetComponent<Rigidbody>().velocity = direction * speed;
+            
+            GetComponent<Rigidbody>();
+            rb.AddForce(0, 3, 0);
 
             canBash = false;
         }
