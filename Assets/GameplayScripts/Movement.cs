@@ -7,17 +7,13 @@ public class Movement : MonoBehaviour
 {
     
     // De DataTypes die er gebruikt worden zijn de Booleans en de floats dit geeft ook aan welke datatypes er worden gebruikt etc...
-
-    //bool isGrounded;
     private float speed = 5.0f;
     public GameObject character;
     public Vector3 jump;
     public float jumpForce = 3.0f;
     public float doubleJumpCount = 0;
     private bool jumpp;
-    //private bool midAirJump;
-   // private float vertical;
-    //private float horizontal;
+    private Animator anim;
 
     Rigidbody rb;
    
@@ -25,8 +21,10 @@ public class Movement : MonoBehaviour
    // De jump is nog wat houterig moet nog wat aan gedaan worden.
     private void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 3.0f, 0.0f);
+        
     }
 
     // OnCollisionStay is een Functie die aangeeft met de argument en constructor wat het doet als de character de grond aanraakt geeft ie dat met true aan.
@@ -44,10 +42,11 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //Update Functie geeft aan over de input voor de movement en het jumpen van de character. is grounded is een if statement die aangeeft of die op de grond staat.
-    // voor het springen zodat die niet oneindig kan springen.
+    // Hier zit de input van het jumpen tot de movement
+    // Movement wordt gedaan doormiddel van AddForce wat vloeiender aanvoelt en waardoor je werkt met physics van unity engine zelf.
     public void Update()
     {
+       
         jumpp = Input.GetKeyDown(KeyCode.Space);
 
         if (jumpp)
@@ -60,33 +59,28 @@ public class Movement : MonoBehaviour
             }
         }
 
-        //Vector3 characterFlip = transform.localScale;
+        Vector3 characterFlip = transform.localScale;
         if (Input.GetKey(KeyCode.D))
         {
-            transform.RotateAround(transform.position, transform.up, 180f);
-            transform.position += Vector3.right * speed * Time.deltaTime;
-            //characterFlip.z = 0.2026014f;
-           // transform.localScale = characterFlip;
-           // vertical = Input.GetAxis("Vertical");
-           // horizontal = Input.GetAxis("Horizontal");
-           //rb.velocity = (transform.forward * vertical) * speed * Time.deltaTime;
+            
+            rb.AddForce (Vector3.right, ForceMode.Impulse);
+            transform.eulerAngles = new Vector3(0, -90, 0);
+            anim.SetFloat("speed", 1);
+           
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.RotateAround(transform.position, transform.up, 180f);
-            transform.position += Vector3.left * speed * Time.deltaTime;
-           // characterFlip.z = -0.2026014f;
-            //transform.localScale = characterFlip;
+            rb.AddForce (Vector3.left, ForceMode.Impulse);
+            transform.eulerAngles = new Vector3(0, 90, 0);
+            anim.SetFloat("speed", 1);
+           
+        }
+        if (anim)
+        {
 
         }
-       
-
-
-
-        //Debug.Log(isGrounded);
-        //Debug.Log("Do Something");
-        //Debug.Log(characterFlip);
     }
+    
    
 
 

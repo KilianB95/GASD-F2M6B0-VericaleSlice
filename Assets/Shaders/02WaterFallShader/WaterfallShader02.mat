@@ -21,12 +21,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WaterfallShader02
-  m_Shader: {fileID: -6465566751694194690, guid: 3f4ff4949c6eb9945bfcd2114086c494, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a5ea2ca3e8e519e46aa876123302b8c5, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _DOUBLESIDED_ON _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2750
+  m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
